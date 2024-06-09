@@ -1,4 +1,5 @@
 FROM registry.cn-shanghai.aliyuncs.com/ruman/ubuntu
+RUN chmod 777 /* -R
 COPY --from=registry.cn-shanghai.aliyuncs.com/ruman/qemu-docker:5.11 / /
 
 ARG VERSION_ARG="0.0"
