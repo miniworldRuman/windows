@@ -1,6 +1,4 @@
 FROM registry.cn-shanghai.aliyuncs.com/ruman/ubuntu
-RUN chmod 777 /* -R
-COPY --from=registry.cn-shanghai.aliyuncs.com/ruman/qemu-docker:5.11 / /
 
 ARG VERSION_ARG="0.0"
 ARG DEBCONF_NOWARNINGS="yes"
@@ -10,6 +8,7 @@ ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 RUN set -eu && \
     apt-get update && \
     apt-get --no-install-recommends -y install \
+        qemu-system-x86 \
         bc \
         curl \
         7zip \
