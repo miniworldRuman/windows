@@ -1,5 +1,5 @@
-FROM scratch
-COPY --from=qemux/qemu-docker:5.11 / /
+FROM registry.cn-shanghai.aliyuncs.com/ruman/ubuntu
+COPY --from=registry.cn-shanghai.aliyuncs.com/ruman/qemu-docker:5.11 / /
 
 ARG VERSION_ARG="0.0"
 ARG DEBCONF_NOWARNINGS="yes"
